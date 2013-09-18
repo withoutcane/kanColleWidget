@@ -2,11 +2,11 @@
 function SoloEventBase(){}
 /* boolean */SoloEventBase.prototype.isUpToTime = function(){
     var now    = (new Date()).getTime();
-    var finish = (new Date(this.finish)).getTime();
+    var finish = Date.parse(this.finish);
     return (finish < now);
 }
 /* int: Epoch */SoloEventBase.prototype.getEndTime = function(){
-    return (new Date(this.finish)).getTime();
+    return Date.parse(this.finish);
 }
 /* void */SoloEventBase.prototype.notify = function(){
 
